@@ -1,4 +1,4 @@
-// Maximilian Petersson | 0110050077 | maxpet@kth.se
+// Maximilian Petersson | maxpet@kth.se
 
 #include <stdio.h>
 #include <stdbool.h>
@@ -14,7 +14,7 @@ int main()
     printf("Mata in realtiden enligt formatet HHMMSS utan kolon: ");
     scanf("%d", &present_time);
 
-    printf("Sätt alarm enligt samma tidsformat: ");
+    printf("SÃ¤tt alarm enligt samma tidsformat: ");
     scanf("%d", &time_for_alarm);
 
     while (run_time)
@@ -25,7 +25,7 @@ int main()
     return 0;
 }
 
-// Funktionen räknar upp tiden samt hanterar pretty print av tiden.
+// Funktionen rÃ¤knar upp tiden samt hanterar pretty print av tiden.
 int update_Time(int t, int s, int m, int h)
 {
     // Konverterar till sekunder, minuter och timmar i den ordningen.
@@ -33,12 +33,12 @@ int update_Time(int t, int s, int m, int h)
     m = (t % 10000 - s)/100;
     h = (t % 1000000 - m - s)/10000;
 
-    // pretty print. "...02..." är ett sätt att formatera string och betyder att talet som ska printas ut måste vara 2 siffrigt. EX. 1 blir 01, 10 blir 10.
+    // pretty print. "...02..." Ã¤r ett sÃ¤tt att formatera string och betyder att talet som ska printas ut mÃ¥ste vara 2 siffrigt. EX. 1 blir 01, 10 blir 10.
     printf("%02d:%02d:%02d\n", h, m, s);
 
-    // Lägger på 1 sek varje cykel.
+    // LÃ¤gger pÃ¥ 1 sek varje cykel.
     s++;
-    // ">=" Säkerställer att programmet aldrig blir fast i en evigt uppräknande loop tillskillnad från ifall det bara hade stått "==". Med andra ord en säkerhetsspärr.
+    // ">=" SÃ¤kerstÃ¤ller att programmet aldrig blir fast i en evigt upprÃ¤knande loop tillskillnad frÃ¥n ifall det bara hade stÃ¥tt "==". Med andra ord en sÃ¤kerhetsspÃ¤rr.
     if(s >= 60){
         m++;
         s = 0;
@@ -56,7 +56,7 @@ int update_Time(int t, int s, int m, int h)
     return t;
 }
 
-// Funktionen utlöser alarm
+// Funktionen utlÃ¶ser alarm
 int sound_The_Alarm (int pt, int tfa, bool r){
     if(pt == tfa){
         printf("ALARM!");
